@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '../components/HelloWorld.vue'
+import Index from '../components/Index.vue'
+import About from '../components/About.vue'
+import Project from '../components/Project.vue'
+import Experience from '../components/Experience.vue'
+// import Blog from '../components/Blog.vue'  -- coming (real) soom
+
 
 Vue.use(Router)
 
@@ -9,8 +14,24 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'Index',
+      component: Index
+    },
+    {
+      path: '/project',
+      name: 'project',
+      component: Project
+    },
+    {
+      path: '/experience',
+      name: 'experience',
+      component: Experience
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: About
     }
+
   ]
 })
