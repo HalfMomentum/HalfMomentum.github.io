@@ -5,7 +5,10 @@ import About from '../components/About.vue'
 import Project from '../components/Project.vue'
 import Experience from '../components/Experience.vue'
 // import Blog from '../components/Blog.vue'  -- coming (real) soom
+import axios from 'axios';
+import VueAxios from 'vue-axios';
 
+Vue.use(VueAxios,axios);
 
 Vue.use(Router)
 

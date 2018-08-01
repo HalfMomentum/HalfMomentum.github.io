@@ -2,45 +2,55 @@
   <div class="grid">
     <div class="row">
       <div class="segment center aligned">
+        <img class="ui small circular middle aligned image" src="https://avatars0.githubusercontent.com/u/23341593?s=400&u=2c260827268f1b98e55e96398d4b953cc4d5c488&v=4"/>
         <h1 class="ui center aligned header">
-          <img class="ui massicve circular middle aligned image" src="https://avatars0.githubusercontent.com/u/23341593?s=400&u=2c260827268f1b98e55e96398d4b953cc4d5c488&v=4"/>
-          <br>
           Madhav Malpani
         </h1>
       </div>
 
       <div class="ui horizontal bulleted link list">
         <router-link class="item" :to="{name: 'project'}">Projects</router-link>
-        <router-link class="item" :to="{name: 'project'}">Experience</router-link>
-        <router-link class="item" :to="{name: 'project'}">About</router-link>
+        <router-link class="item" :to="{name: 'experience'}">Experience</router-link>
+        <router-link class="item" :to="{name: 'about'}">About</router-link>
       </div>
-
-    </div>
-    <div class="left aligned ten wide column row">
-      <div class="segment">
-        <h2 class="header">
-          About
-        </h2>
-        <p>Something about me, maybe a copied text here :p</p>
-      </div>
+      <h5 class="ui sub header" v-html="quote"></h5>
+      <span class="ui disabled header" v-html="author"></span>
+      
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  data () {
+  name: "HelloWorld",
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      quote: "A charming quote",
+      author: "someone",
+      support: "#"
+    };
+  },
+  mounted() {
+    this.get_quote();
+  },
+  methods: {
+    get_quote() {
+      let api_quote = this.axios.get('https://quotesondesign.com/wp-json/posts?filter[posts_per_page]=1').then(response=>{
+          this.author = response.data[0].title;
+          this.quote = response.data[0].content;
+      },
+      response=>{
+
+      })
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 ul {

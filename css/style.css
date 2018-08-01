@@ -1,0 +1,8 @@
+body {
+  background: rgb(47, 199, 123);
+  background: linear-gradient(0deg, rgba(47, 199, 123, 1) 0%, rgba(0, 232, 255, 1) 61%, rgba(255, 255, 255, 0) 84%);
+}
+
+* {
+  text-shadow: 1px;
+}
