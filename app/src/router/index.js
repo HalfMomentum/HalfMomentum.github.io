@@ -15,11 +15,7 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   routes: [
-    {
-      path: '/',
-      name: 'Index',
-      component: Index
-    },
+    ,
     {
       path: '/project',
       name: 'project',
@@ -34,7 +30,11 @@ export default new Router({
       path: '/about',
       name: 'about',
       component: About
+    },
+    {
+      path: '*',
+      name: 'lost',
+      component: Index
     }
-
   ]
 })

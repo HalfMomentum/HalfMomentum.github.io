@@ -1,21 +1,12 @@
 <template>
-  <div class="grid">
+  <div class="ui centered grid">
     <div class="row">
-      <div class="segment center aligned">
-        <img class="ui small circular middle aligned image" src="https://avatars0.githubusercontent.com/u/23341593?s=400&u=2c260827268f1b98e55e96398d4b953cc4d5c488&v=4"/>
-        <h1 class="ui center aligned header">
-          Madhav Malpani
-        </h1>
+      <div class="ten wide computer eight wide tablet eight wide mobile column middle aligned">
+        <div class="ui segment">
+          <h5 class="ui sub header quote" v-html="quote"></h5>
+          <span class="ui sub header right floated author" v-html="author"></span>
+        </div>
       </div>
-
-      <div class="ui horizontal bulleted link list">
-        <router-link class="item" :to="{name: 'project'}">Projects</router-link>
-        <router-link class="item" :to="{name: 'experience'}">Experience</router-link>
-        <router-link class="item" :to="{name: 'about'}">About</router-link>
-      </div>
-      <h5 class="ui sub header" v-html="quote"></h5>
-      <span class="ui disabled header" v-html="author"></span>
-      
     </div>
   </div>
 </template>
@@ -48,20 +39,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style lang="scss" scoped>
+
+  .ui.segment {
+      mix-blend-mode: overlay;
+      background-color:white;
+    }
 </style>
+
